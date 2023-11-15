@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+	http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://www.testing87.online</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/theory</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/api</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/sdlc</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/quickstart</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/roadmap</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/faq</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/disclaimer</loc>
+</url>
+<url>
+  <loc>https://rpcs3.net/alipay</loc>
+</url>
+<url>
+  <loc>https://forums.rpcs3.net/</loc>
+</url>
+<url>
+  <loc>https://wiki.rpcs3.net/</loc>
+</url>
+</urlset>
