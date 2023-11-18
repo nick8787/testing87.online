@@ -1,0 +1,8 @@
+D:\visual studio 2015\Projects\test_patcher\test_patcher\bin\Release\test_patcher.exe
+D:\visual studio 2015\Projects\test_patcher\test_patcher\bin\Release\test_patcher.pdb
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.Form1.resources
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.Properties.Resources.resources
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.csproj.GenerateResource.Cache
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.exe
+D:\visual studio 2015\Projects\test_patcher\test_patcher\obj\Release\test_patcher.pdb

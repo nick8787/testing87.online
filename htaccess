@@ -1,0 +1,64 @@
+RewriteEngine on
+Options -Indexes
+
+# Security flags for HTML headers
+<IfModule mod_headers.c>
+	# Protect against XSS attacks
+	Header set X-XSS-Protection "1; mode=block"
+	# Protect against page-framing and click-jacking
+	Header always append X-Frame-Options SAMEORIGIN
+	# Protect against content-sniffing (MIME)
+	Header set X-Content-Type-Options nosniff
+</IfModule>
+
+# Unless directory, remove trailing slash
+RewriteCond %{HTTP_HOST} !^wiki\.rpcs3\.net$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteRule ^([^/]+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect external .php requests to extension less url
+RewriteCond %{HTTP_HOST} !^wiki\.rpcs3\.net$ [NC]
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteRule ^(.+)\.php$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+# Resolve .php file for extension-less php urls
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Disables page caching for real-time updating
+# <filesMatch "\.(html|htm|js|css|php)$">
+# FileETag None
+# Header unset ETag
+# Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+# Header set Pragma "no-cache"
+# Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+# </filesMatch>
+
+# Compatibility: Rewrite URLs
+Redirect "/nightly" "/compatibility?b"
+Redirect "/builds" "/compatibility?b"
+Redirect "/compat" "/compatibility"
+Redirect "/library" "/compatibility?l"
+
+# Assigns an error page
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+ErrorDocument 401 /401.php
+ErrorDocument 400 /400.php

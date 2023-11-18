@@ -1,0 +1,25 @@
+Для того, чтобы создать генерацию отчетов с инструментом Mochawasome, нужно выполнить ряд следующих действий:
+
+1. npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+Это в терминал (скачает mochawesome и mochawesome-merge)
+
+2. "reporter": "mochawesome",
+"reporterOptions": {
+  "reportDir": "cypress/reports",
+  "overwrite": false,
+  "html": false,
+  "json": true
+}
+Это вставить в файл cypress.json или cypress.config.js.
+
+3."scripts": {
+        "merge-reports": "mochawesome-merge cypress/reports/*.json > mochawesome.json",
+        "generate-report": "marge mochawesome.json -f report -o cypress/reports",
+        "posttest": "npm run merge-reports && npm run generate-report",
+        "test": "cypress run"
+      }
+Это вставить в файл package.json
+
+4.Запустить тесты в терминале npm test
+
+Будет создана папка reports, где будут все отчеты, в том числе и красивый HTML report.

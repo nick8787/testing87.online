@@ -1,0 +1,26 @@
+.user.ini
+.well-known/
+/cdn/press/
+/cdn/press/Press Kit.zip
+/img/graphics/about/src/
+/img/graphics/download/src/
+/img/graphics/landing/src/
+/lib/compat/
+/lib/cronjob/
+ads.txt
+blog/
+cache/
+compatibility2.php
+docs/
+error_log
+favicon.ico
+forum
+googlefd778325c5a53aa8.html
+latest-appimage.php
+latest-windows.php
+php.ini
+robots.txt
+rpcs4.php
+update/
+wiki/
+yaml_test_script.php
