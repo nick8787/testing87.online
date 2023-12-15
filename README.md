@@ -15,3 +15,4 @@
 - Мой профиль на GitHub - [тыць](https://github.com/nick8787)
 - Мой телеграм - [тыць](https://t.me/nick8787)
 - Мой сайт о тестировании - [тыць](https://www.testing87.online/)
+![Иллюстрация к проекту](https://www.testing87.online/img/graphics/about/testing87logohome.jpeg)
